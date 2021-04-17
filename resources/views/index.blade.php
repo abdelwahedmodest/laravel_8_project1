@@ -34,20 +34,29 @@
                         @endif
                     @endauth
                 </div>
-           @endif
-
-	   @foreach($posts as $post)
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">	{{ $post->title }}
-</h5>
-<button type="button" class="btn btn-warning">Warning</button>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-	           @endforeach
-
+@endif
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      <th scope="col">options</th>
+    </tr>
+  </thead>
+  <tbody>
+@foreach($posts as $post)
+    <tr>
+      <th scope="row">{{ $post->id }} </th>
+      <td>{{ $post->body }}</td>
+      <td>{{ $post->title }}</td>
+      <td>{{ $post->image }}</td>
+      <td><button type="button" class="btn btn-info">Info</button><button type="button" class="btn btn-danger">danger</button><button type="button" class="btn btn-warning">warning</button></td>
+    </tr>
+@endforeach   
+  </tbody>
+</table>
     </body>
    <script src="{{ asset('js/jqueryv3_6_0.js') }}" defer></script>
    <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
