@@ -34,7 +34,8 @@
                         @endif
                     @endauth
                 </div>
-@endif
+		@endif
+<div class="container mt-5">
 <table class="table table-hover table-dark">
   <thead>
     <tr>
@@ -51,12 +52,17 @@
       <th scope="row">{{ $post->id }} </th>
       <td>{{ $post->body }}</td>
       <td>{{ $post->title }}</td>
-      <td>{{ $post->image }}</td>
+      <td><img src="{{ asset('assets/images/').$post->image }}" class="css-class" alt="alt text"></td>
       <td><button type="button" class="btn btn-info">Info</button><button type="button" class="btn btn-danger">danger</button><button type="button" class="btn btn-warning">warning</button></td>
     </tr>
-@endforeach   
-  </tbody>
+    @endforeach 
+    </tbody>
 </table>
+  
+<div class="d-flex justify-content-center">
+                {!! $posts->links() !!}
+            </div>  
+
     </body>
    <script src="{{ asset('js/jqueryv3_6_0.js') }}" defer></script>
    <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
